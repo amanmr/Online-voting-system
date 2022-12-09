@@ -13,7 +13,7 @@ const storage=multer.diskStorage({
     }
 })
 const upload=multer({storage:storage})
-
+const SERVER_PORT=process.env.PORT || 3333
 app.set('view engine', 'hbs')
 app.set('views', 'views')
 app.use(express.json())
@@ -141,6 +141,6 @@ app.post('/vote', async (req, res) => {
     }
 })
 
-app.listen(3455, () => {
+app.listen(SERVER_PORT, () => {
     console.log("Server started at http://localhost:3455")
 })
