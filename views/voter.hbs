@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote For Candidate</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="voter.js"></script>
+    <link rel="stylesheet" href="voter.css">
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <p>Welcome</p>
+        </div>
+        <div class="header">
+            <div class="back">
+                <a href="index.html">BACK</a>
+            </div>
+            <div class="logout">
+                <a href="index.html">LOG OUT</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="block1">
+                <div class="err">
+                    <div class="image">
+                        <img src=/images/{{image}} id="dp" alt="Profile pic">
+                    </div>
+                    <div class="ud">
+                        <p class="one func" id={{id}} voteStatus={{voteStatus}}><b>Name</b> : {{name}}</p>
+                        <p class="two"><b>Contact NO</b>. : {{contact}}</p>
+                        <p class="thr"><b>Address</b> : {{address}} </p>
+                        <p class="fou type"><b>User</b> : {{user}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="block2">
+                {{#each candidates as |c|}}
+                <div class="party">
+                    <div class="left">
+                        <p class="one">Group name :{{c.name}} </p>
+                        <p class="two" >Votes : {{c.votes}}</p>
+                        <button type="submit" class="thr hov" cid={{c.id}} >VOTE</button>
+
+                    </div>
+                    <div class="right">
+                        <img src=/images/{{c.image}} alt="Candidate pic" height="100px">
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

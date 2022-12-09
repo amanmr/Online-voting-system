@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Here</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js"></script>
+</head>
+<body>
+    <div class="head">
+        <p >Welcome to Voting Portal</p>
+    </div>
+    <!--<hr size="1px" color="white">-->
+    <div class="form1">
+        <div class="block1">
+            <form action="/register" method="post" enctype="multipart/form-data">
+                <p id="login">REGISTER</p><br><br>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                <input type="number" name="contact" id="number" placeholder="Enter Mobile Number" required><br><br>
+                <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Renter Password" required><br><br>
+                <input type="text" name="address" id="address" placeholder="Enter Your Address" required>
+                <select name="type" id="type">
+                    <option value="voter">User</option>
+                    <option value="candidate">Participant</option>
+                </select><br><br>
+                <div class="image">
+                    Select Your Profile Picture   :   <input type="file" name="image" id="photo">
+                </div>
+                <br>
+                
+                <input type="submit" value="Submit" class="submit" id="but1">
+                <input type="reset" value="Reset" class="submit" id="but2">
+
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

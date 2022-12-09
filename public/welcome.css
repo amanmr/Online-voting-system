@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aqua;
+    
+}
+.head{
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(140, 210, 210);
+}
+.container{
+    display:flex;
+    flex-direction: row;
+    background-color: blueviolet;
+}
