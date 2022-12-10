@@ -1,9 +1,41 @@
 const Sequelize = require('sequelize')
-
-const db = new Sequelize('voting_system', 'adminvote', 'mypass', {
-    host: 'localhost',
+const mysql = require('mysql')
+var fs = require('fs');
+const db = new Sequelize('voting_system', 'iamamanmr', 'ThisissumiT@123', {
+    host: 'usersdatabase.mysql.database.azure.com',
     dialect: 'mysql',
+    port: 3306,
+    ssl: { 
+        ca: fs.readFileSync("C:/Users/iamam/Downloads/DigiCertGlobalRootCA.crt.pem")
+    }
 })
+/*var conn = mysql.createConnection({ 
+    host: "usersdatabase.mysql.database.azure.com", 
+    user: "iamamanmr", 
+    password: "ThisissumiT@123", 
+    database: "voting_system", 
+    port: 3306, 
+    ssl: { ca: fs.readFileSync("C:/Users/iamam/Downloads/DigiCertGlobalRootCA.crt.pem") 
+} });
+conn.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected!");
+});*/
+
+/*var db = new Sequelize('voting_system', 'iamamanmr', 'ThisissumiT@123', {
+    host: 'usersdatabase.mysql.database.azure.com',
+    dialect: 'mssql',
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    },
+    dialectOptions: {
+      encrypt: true,
+      ssl: true
+    }
+  });*/
+  
 const datatype=Sequelize.DataTypes
 const Voter = db.define('voters', {
     id: {
@@ -83,9 +115,9 @@ const Candidate = db.define('candidates', {
 Candidate.hasMany(Voter)
 Voter.belongsTo(Candidate)
 
-/*db.sync({force:true})
+db.sync({alter:true})
     .then(()=>console.log("success"))
-    .catch((err)=>console.error(err))*/
+    .catch((err)=>console.error(err))
 module.exports = {
     db,Voter, Candidate
 }
