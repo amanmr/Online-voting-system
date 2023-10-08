@@ -1,5 +1,5 @@
 # Online-voting-system
-This is an online voting portal where you can register as a user of candidate and can vote a particular candidate.
+This is an online voting portal where you can register as a user or candidate and can vote a particular candidate.
 
 ### There's index.html page which is basically login page.
 ### A person can register as a Voter or a Candidate
